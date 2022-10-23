@@ -1,0 +1,5 @@
+
+-r prod.txt
+
+black==22.10.0
+mpy==0.982
