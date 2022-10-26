@@ -2,4 +2,6 @@
 -r prod.txt
 
 black==22.10.0
-mpy==0.982
+mypy==0.982
+psycopg2==2.9.4
+psycopg2-binary==2.9.4

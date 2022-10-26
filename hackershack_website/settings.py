@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-crm(xq)z_544!%ug-i2l(10m0qlh$hdai+9gt$eqjp3a#wqnwd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -73,17 +73,34 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "hackershack_website.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# POSTGRES_DB = os.environ.get('POSTGRES_DB')
+# print(POSTGRES_DB)
+# POSTGRES_USER = os.environ.get('POSTGRES_USER', default="")
+# POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', default="")
+# POSTGRES_HOST = os.environ.get('POSTGRES_HOST', default="")
+
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
